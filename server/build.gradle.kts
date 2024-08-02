@@ -6,11 +6,11 @@ plugins {
     application
 }
 
-group = "dev.matsem.imagen"
+group = "dev.matsem.ktorcompose"
 version = "1.0.0"
 
 application {
-    mainClass.set("dev.matsem.imagen.ApplicationKt")
+    mainClass.set("dev.matsem.ktorcompose.ApplicationKt")
     val devMode = System.getenv("DEV_MODE")?.toBooleanStrictOrNull() ?: false
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$devMode")
 }

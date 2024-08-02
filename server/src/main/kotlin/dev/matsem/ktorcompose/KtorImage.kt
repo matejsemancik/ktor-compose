@@ -1,4 +1,4 @@
-package dev.matsem.imagen
+package dev.matsem.ktorcompose
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background

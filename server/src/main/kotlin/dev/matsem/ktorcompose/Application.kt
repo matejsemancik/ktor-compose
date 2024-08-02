@@ -1,4 +1,4 @@
-package dev.matsem.imagen
+package dev.matsem.ktorcompose
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.ImageComposeScene
