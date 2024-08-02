@@ -20,7 +20,7 @@ RUN gradle buildFatJar --no-daemon
 # Run and expose the backend
 FROM eclipse-temurin:17-jre
 
-# Update package list and install libgl1 package
+# Install libgl1 package needed by Compose (shamefully suggested by Copilot, not sure if I need the rm -rf)
 RUN apt-get update && apt-get install -y mesa-utils libgl1 && rm -rf /var/lib/apt/lists/*
 
 EXPOSE 8080:8080
