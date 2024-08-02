@@ -11,7 +11,8 @@ version = "1.0.0"
 
 application {
     mainClass.set("dev.matsem.imagen.ApplicationKt")
-    applicationDefaultJvmArgs = listOf("-Dio.ktor.development=${extra["io.ktor.development"] ?: "false"}")
+    val devMode = System.getenv("DEV_MODE")?.toBooleanStrictOrNull() ?: false
+    applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$devMode")
 }
 
 dependencies {

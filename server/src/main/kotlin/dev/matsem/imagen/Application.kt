@@ -27,11 +27,14 @@ fun main() {
 fun Application.module() {
     routing {
         get("/image") {
+            val width = call.parameters["width"]?.toIntOrNull() ?: 256
+            val height = call.parameters["height"]?.toIntOrNull() ?: 256
+
             call.respondBytes(contentType = ContentType.Image.PNG, status = HttpStatusCode.OK) {
                 val scene =
                     ImageComposeScene(
-                        width = 256,
-                        height = 256,
+                        width = width,
+                        height = height,
                     ) {
                         KtorImage(Modifier.fillMaxSize())
                     }
