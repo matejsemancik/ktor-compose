@@ -3,6 +3,7 @@ package dev.matsem.ktorcompose
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.ImageComposeScene
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.use
 import io.ktor.http.ContentType
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application
@@ -40,9 +41,11 @@ fun Application.module() {
                     }
 
                 val image =
-                    scene
-                        .render(nanoTime = 0)
-                        .encodeToData(format = EncodedImageFormat.PNG) ?: error("encoding failed")
+                    scene.use {
+                        it
+                            .render(nanoTime = 0)
+                            .encodeToData(format = EncodedImageFormat.PNG) ?: error("encoding failed")
+                    }
 
                 image.bytes
             }
