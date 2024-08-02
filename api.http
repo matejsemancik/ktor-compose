@@ -1,0 +1,2 @@
+# Generate an image
+GET localhost:8080/image
