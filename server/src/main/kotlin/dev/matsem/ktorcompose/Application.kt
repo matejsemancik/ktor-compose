@@ -16,7 +16,6 @@ import io.ktor.server.routing.routing
 import org.jetbrains.skia.EncodedImageFormat
 
 fun main() {
-    System.setProperty("java.awt.headless", "true")
     embeddedServer(
         factory = Netty,
         port = 8080,
